@@ -13,7 +13,8 @@
  * @license   http://www.opensource.org/licenses/mit-license.php MIT License
  */
 namespace App\Controller;
-
+use App\Controller\AppController;
+use Cake\Event\Event;
 use Cake\Core\Configure;
 use Cake\Network\Exception\ForbiddenException;
 use Cake\Network\Exception\NotFoundException;
@@ -38,6 +39,13 @@ class PagesController extends AppController
      * @throws \Cake\Network\Exception\NotFoundException When the view file could not
      *   be found or \Cake\View\Exception\MissingTemplateException in debug mode.
      */
+      public function registry(){
+        
+    }
+    
+  
+    
+    
     public function display(...$path)
     {
         $count = count($path);
@@ -66,4 +74,6 @@ class PagesController extends AppController
             throw new NotFoundException();
         }
     }
+    
+
 }

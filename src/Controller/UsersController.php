@@ -2,7 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
-
+use Cake\Event\Event;
 /**
  * Users Controller
  *
@@ -116,10 +116,7 @@ class UsersController extends AppController
         return $this->redirect(['action' => 'index']);
     }
     
-     public function registry(){
-         
-                 return $this->redirect(['controller' => 'pages', 'action' => 'registry' ]);
-    }
+   
     public function login(){
         if($this->request->is('post')){
             $user = $this->Auth->identify();
@@ -144,5 +141,6 @@ class UsersController extends AppController
          $this->Flash->success('You are logged out');
          return $this->redirect($this->Auth->logout());
     }
-
+    
+  
 }

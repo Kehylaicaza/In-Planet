@@ -45,6 +45,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                 <?= $this->Html->css('style.css') ?>
                     <?= $this->Html->css('style2.css') ?>
 
+    <?= $this->Html->css('estilo.css') ?>
 
                         <?= $this->fetch('meta') ?>
                             <?= $this->fetch('script') ?>
@@ -91,7 +92,8 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
         </div>
 
         <div class="container">
-            <form>
+            
+          <form>
                 <div class="contentform">
                     <div class="leftcontact">
                         <div class="form-group">
@@ -101,10 +103,19 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                             <input type="text" name="phone" placeholder="Nro. Telefono" />
                         </div>
                         <div class="form-group">
-                            <input type="email" name="ci" placeholder="Cargar CI" />
+                            <input type="text" name="ci" placeholder="Cédula" />
+                        </div>
+                        
+                            
+                        <div class="form-group">
+                            <input type="text" name="user" placeholder="Username" />
                         </div>
                         <div class="form-group">
-                            <input type="text" name="planilla" placeholder="Cargar Planilla" />
+                       
+                             <p class="planilla">Cargar planilla</p><input class="planilla" type="file" name="planilla" placeholder="Planilla"  />
+                           
+                           
+                         
                         </div>
                     </div>
 
@@ -121,6 +132,15 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                         <div class="form-group">
                             <input type="text" name="direccion" placeholder="Direccion" />
                         </div>
+                        <div class="form-group">
+                            <input type="password" name="pass" placeholder="Contrasena" />
+                        </div>
+                         <div class="form-group">
+                            <input type="text" name="direccion" placeholder="Ciudad" />
+                        </div>
+                        
+                                   
+                        
 
                         <div class="form-group">
                             <button type="submit" class="bouton-contact">Enviar</button>
@@ -129,6 +149,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                 </div>
 
             </form>
+            
         </div>
 
     </body>

@@ -46,7 +46,9 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                 <ul class="right">
 
                     <li>
-                        <?= $this->Html->link(__('Regístrate'), ['controller' => 'pages', 'action' => 'registry' ]) ?>
+                        <?= $this->Html->link(('Regístrate'), ['controller' => 'pages', 'action' => 'registry' ]) ?>
+                        
+                        	
                     </li>
 
                     <li>

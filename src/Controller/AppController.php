@@ -56,13 +56,14 @@ class AppController extends Controller
                     'controller' => 'Users',
                     'action' => 'login'
                 ]
+           
             ]);
     }
      public function beforeFilter(Event $event){
         //parent::beforeFilter();
 $this->Auth->allow(array('controller' => 'People', 'action' => 'display', 'add'));
          $this->Auth->allow(array('controller' => 'Users', 'action' => 'display', 'login'));
-            $this->Auth->allow(array('controller' => 'Users', 'action' => 'display', 'add'));
+           
     }
     /**
      * Before render callback.

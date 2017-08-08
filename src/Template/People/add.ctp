@@ -21,7 +21,7 @@
                 <?= $this->Html->css('style.css') ?>
                     <?= $this->Html->css('style2.css') ?>
 
-                        <?= $this->Html->css('estilo.css') ?>
+                       
 
                             <?= $this->fetch('meta') ?>
                                 <?= $this->fetch('script') ?>

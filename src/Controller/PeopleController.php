@@ -59,7 +59,6 @@ class PeopleController extends AppController
             $person = $this->People->patchEntity($person, $this->request->getData());
             if ($this->People->save($person)) {
                 $this->Flash->success(__('The person has been saved.'));
-
                 return $this->redirect(['Controller' => 'Users' , 'action' => 'add']);
             }
             $this->Flash->error(__('The person could not be saved. Please, try again.'));

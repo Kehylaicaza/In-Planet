@@ -18,6 +18,7 @@ use Cake\Core\Plugin;
 use Cake\Datasource\ConnectionManager;
 use Cake\Error\Debugger;
 use Cake\Network\Exception\NotFoundException;
+use Cake\ORM\TableRegistry;
 
 $this->layout = false;
 
@@ -66,23 +67,14 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
             </ul>
             <div class="top-bar-section">
                 <ul class="right">
-
-                    <li>
-                        <?= $this->Html->link(__('Regístrate'), ['controller' => 'pages', 'action' => 'registry' ]) ?>
-                    </li>
-
-                    <li>
-                        <?= $this->Html->link('Logout', ['controller' => 'users', 'action' => 'logout']); ?>
-                    </li>
+                     <?php if($loggedIn) : ?>
+                    <li><?= $this->Html->link('Logout', ['controller' => 'users', 'action' => 'logout']); ?></li>
+                <?php else : ?>
+                    <li><?= $this->Html->link('Registry', ['controller' => 'pages', 'action' => 'registry']); ?></li>
+                <?php endif; ?>
                 </ul>
             </div>
         </nav>
-
-
-
-
-
-
         <div class="info">
             <br><br><br><br>
             <h3>REGISTRATE</h3>
@@ -92,11 +84,18 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
         </div>
 
         <div class="container">
-            
+             <?= $this->Form->create($user); ?>
+			<?= $this->Form->input('name'); ?>
+			<?= $this->Form->input('email'); ?>
+			<?= $this->Form->input('password', array('type' => 'password')); ?>
+			<?= $this->Form->submit('Register', array('class' => 'button')); ?>
+		<?= $this->Form->end(); ?>
           <form>
+             
                 <div class="contentform">
                     <div class="leftcontact">
                         <div class="form-group">
+                           <?= $this->Form->input('Nombres'); ?>
                             <input type="text" name="name" placeholder="Nombres" />
                         </div>
                         <div class="form-group">
@@ -136,19 +135,21 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                             <input type="password" name="pass" placeholder="Contrasena" />
                         </div>
                          <div class="form-group">
-                            <input type="text" name="direccion" placeholder="Ciudad" />
-                        </div>
-                        
-                                   
-                        
-
+                            <?php
+                             $element= TableRegistry::get('Cities');
+                             $query= $element->find('list');
+                             echo $this->Form->control('city_id', ['options' => $query]);
+                             ?>
+                        </div>        
                         <div class="form-group">
-                            <button type="submit" class="bouton-contact">Enviar</button>
+                            <button type="button" class="bouton-contact">Enviar</button>
                         </div>
                     </div>
                 </div>
+                
 
             </form>
+            
             
         </div>
 

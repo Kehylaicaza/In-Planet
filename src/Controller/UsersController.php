@@ -142,5 +142,35 @@ class UsersController extends AppController
          return $this->redirect($this->Auth->logout());
     }
     
-  
+   public function register(){
+        $user = $this->People->newEntity();
+        if($this->request->is('post')){
+            $user = $this->People->patchEntity($user, $this->request->data);
+            if($this->People->save($user)){
+                $this->Flash->success('You are registered and can login');
+                return $this->redirect(['action' => 'login']);
+            } else {
+                $this->Flash->error('You are not registered');
+            }
+        }
+        $this->set(compact('user'));
+        $this->set('_serialzie', ['user']);
+    }
+    public function beforeFilter(Event $event){
+        $this->Auth->allow(['registry']);
+    }
+   public function beforeRender(Event $event)
+    {
+        if (!array_key_exists('_serialize', $this->viewVars) &&
+            in_array($this->response->type(), ['application/json', 'application/xml'])
+        ) {
+            $this->set('_serialize', true);
+        }
+        // Login Check
+        if($this->request->session()->read('Auth.User')){
+             $this->set('loggedIn', true);   
+        } else {
+            $this->set('loggedIn', false); 
+        }
+    }
 }

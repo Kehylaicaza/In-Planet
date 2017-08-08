@@ -45,15 +45,11 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             <div class="top-bar-section">
                 <ul class="right">
 
-                    <li>
-                        <?= $this->Html->link(('Regístrate'), ['controller' => 'pages', 'action' => 'registry' ]) ?>
-                        
-                        	
-                    </li>
-
-                    <li>
-                        <?= $this->Html->link('Logout', ['controller' => 'users', 'action' => 'logout']); ?>
-                    </li>
+                     <?php if($loggedIn) : ?>
+                    <li><?= $this->Html->link('Logout', ['controller' => 'users', 'action' => 'logout']); ?></li>
+                <?php else : ?>
+                    <li><?= $this->Html->link('Register', ['controller' => 'people', 'action' => 'add']); ?></li>
+                <?php endif; ?>
                 </ul>
             </div>
         </nav>

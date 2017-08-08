@@ -3,29 +3,69 @@
   * @var \App\View\AppView $this
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('List People'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Cities'), ['controller' => 'Cities', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New City'), ['controller' => 'Cities', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?></li>
-    </ul>
-</nav>
-<div class="people form large-9 medium-8 columns content">
+
+<!DOCTYPE html>
+    <html>
+
+    <head>
+        <link rel="stylesheet" href="/InPlanet2/css/style.css" />
+        <link rel="stylesheet" href="/InPlanet2/css/base.css" />
+        <?= $this->Html->charset() ?>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>
+                <?= $cakeDescription ?>:
+                    <?= $this->fetch('title') ?>
+            </title>
+            <?= $this->Html->meta('icon') ?>
+
+                <?= $this->Html->css('style.css') ?>
+                    <?= $this->Html->css('style2.css') ?>
+
+    <?= $this->Html->css('estilo.css') ?>
+
+                        <?= $this->fetch('meta') ?>
+                            <?= $this->fetch('script') ?>
+    </head>
+
+  
+        
+<div class="info">
     <?= $this->Form->create($person) ?>
+     <br><br><br><br>
+            <h3>REGISTRATE</h3>
+
+            <p> Mantengase conectado todo el dia con nuestros planes ...</p>
+            <h5>Llena tus datos</h5>
+        </div>
     <fieldset>
-        <legend><?= __('Add Person') ?></legend>
-        <?php
-            echo $this->Form->control('name');
-            echo $this->Form->control('last_name');
-            echo $this->Form->control('ci');
-            echo $this->Form->control('city_id', ['options' => $cities]);
-            echo $this->Form->control('address');
-            echo $this->Form->control('email');
-        ?>
+      <div class="contentform">
+          <div class="leftcontact">
+                 <div class="form-group">
+                      <?php
+            echo $this->Form->control('name');?>
+              </div>
+                <div class="form-group">
+                     <?php     echo $this->Form->control('last_name');  ?>
+              </div>
+                <div class="form-group">
+                    <?php   echo $this->Form->control('ci'); ?>
+              </div>
+          </div>
+           <div class="rightcontact">
+            <div class="form-group">
+                   <?php   echo $this->Form->control('city_id', ['options' => $cities]);  ?>
+              </div>
+          <div class="form-group">
+                   <?php   echo $this->Form->control('address');  ?>
+              </div>
+            <div class="form-group">
+                     <?php echo $this->Form->control('email'); ?>
+              </div>
+          
+          </div>
+        
+        </div>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>
-</div>
+

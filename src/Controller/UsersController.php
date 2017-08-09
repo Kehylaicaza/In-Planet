@@ -64,8 +64,15 @@ class UsersController extends AppController
             }
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
         }
-        $people = $this->Users->People->find('list', ['limit' => 200]);
-        $profiles = $this->Users->Profiles->find('list', ['limit' => 200]);
+     //   $people = $this->Users->People->find('list', ['keyField' => 'name',
+   // 'valueField' => '$identificador']);
+     if($loggedIn) : 
+                       $profiles = $this->Users->Profiles->find('list', ['limit' => 200]);
+                else :
+                  
+        $profiles = $this->Users->Profiles->find('list', ['limit' => 200]);  
+                 endif;
+
         $this->set(compact('user', 'people', 'profiles'));
         $this->set('_serialize', ['user']);
     }
@@ -144,7 +151,7 @@ class UsersController extends AppController
          return $this->redirect($this->Auth->logout());
     }
     
-   public function register(){
+   /*public function register(){
         $user = $this->People->newEntity();
         if($this->request->is('post')){
             $user = $this->People->patchEntity($user, $this->request->data);
@@ -158,9 +165,7 @@ class UsersController extends AppController
         $this->set(compact('user'));
         $this->set('_serialzie', ['user']);
     }
-    public function beforeFilter(Event $event){
-        $this->Auth->allow(['registry']);
-    }
+   */
    public function beforeRender(Event $event)
     {
         if (!array_key_exists('_serialize', $this->viewVars) &&
@@ -175,4 +180,7 @@ class UsersController extends AppController
             $this->set('loggedIn', false); 
         }
     }
+    
+
+    
 }

@@ -58,8 +58,11 @@ class PeopleController extends AppController
         if ($this->request->is('post')) {
             $person = $this->People->patchEntity($person, $this->request->getData());
             if ($this->People->save($person)) {
-                $this->Flash->success(__('The person has been saved.'));
-                return $this->redirect(['Controller' => 'Users' , 'action' => 'add']);
+                $this->Flash->success(__('Se ha registrado con éxito.'));
+                   
+      
+                return $this->redirect(array('controller' => 'Users', 'action' =>  'add',$identificador));
+               
             }
             $this->Flash->error(__('The person could not be saved. Please, try again.'));
         }
@@ -75,6 +78,9 @@ class PeopleController extends AppController
      * @return \Cake\Http\Response|null Redirects on successful edit, renders view otherwise.
      * @throws \Cake\Network\Exception\NotFoundException When record not found.
      */
+    
+   
+        
     public function edit($id = null)
     {
         $person = $this->People->get($id, [

@@ -48,7 +48,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                      <?php if($loggedIn) : ?>
                     <li><?= $this->Html->link('Logout', ['controller' => 'users', 'action' => 'logout']); ?></li>
                 <?php else : ?>
-                    <li><?= $this->Html->link('Register', ['controller' => 'people', 'action' => 'add']); ?></li>
+                    <li><?= $this->Html->link('Register', ['controller' => 'users', 'action' => 'add']); ?></li>
                 <?php endif; ?>
                 </ul>
             </div>

@@ -53,7 +53,7 @@ class PeopleController extends AppController
      */
     public function add()
     {
-       $this->viewBuilder()->setLayout('inPlanet');
+       $this->viewBuilder()->setLayout('inPlanetLo');
         $person = $this->People->newEntity();
         if ($this->request->is('post')) {
             $person = $this->People->patchEntity($person, $this->request->getData());

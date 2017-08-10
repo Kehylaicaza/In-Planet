@@ -72,5 +72,9 @@ class PagesController extends AppController
         }
     }
     
+    public function client()
+    {
+ $this->viewBuilder()->setLayout(false);
+    }
 
 }

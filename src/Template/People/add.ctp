@@ -21,15 +21,16 @@
                 <?= $this->Html->css('style.css') ?>
                     <?= $this->Html->css('style2.css') ?>
 
-                       
 
-                            <?= $this->fetch('meta') ?>
-                                <?= $this->fetch('script') ?>
+
+                        <?= $this->fetch('meta') ?>
+                            <?= $this->fetch('script') ?>
     </head>
 
 
 
     <div class="info">
+
         <?= $this->Form->create($person) ?>
             <br><br><br><br>
             <h3>Ingresa tus datos</h3>
@@ -64,6 +65,9 @@
 
                 <div class="form-group">
                     <?= $this->Form->button(__('Submit'), array('class' => 'bouton-contact')) ?>
+                </div>
+                <div class="form-group">
+                    <?= $this->Html->link( 'Volver al Menú',['controller' => 'Pages', 'action' => 'client']); ?>
                 </div>
 
             </div>

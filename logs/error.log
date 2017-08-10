@@ -3779,3 +3779,388 @@ Stack Trace:
 #15 {main}
 
 
+2017-08-10 00:59:26 Error: [PDOException] SQLSTATE[HY000]: General error: 11 database disk image is malformed in C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php on line 174
+Request URL: /
+Stack Trace:
+#0 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): PDOStatement->execute(NULL)
+#1 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Database\Statement\BufferedStatement.php(76): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Database\Statement\SqliteStatement.php(41): Cake\Database\Statement\BufferedStatement->execute(NULL)
+#4 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Database\Connection.php(311): Cake\Database\Statement\SqliteStatement->execute()
+#5 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Database\Query.php(213): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#6 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\ORM\Table.php(1916): Cake\Database\Query->execute()
+#7 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\ORM\Table.php(1810): Cake\ORM\Table->_insert(Object(DebugKit\Model\Entity\Request), Array)
+#8 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\ORM\Table.php(1723): Cake\ORM\Table->_processSave(Object(DebugKit\Model\Entity\Request), Object(ArrayObject))
+#9 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\ORM\Table.php(1446): Cake\ORM\Table->Cake\ORM\{closure}()
+#10 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Database\Connection.php(678): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#11 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\ORM\Table.php(1447): Cake\Database\Connection->transactional(Object(Closure))
+#12 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\ORM\Table.php(1724): Cake\ORM\Table->_executeTransaction(Object(Closure), true)
+#13 C:\xampp\htdocs\In-Planet\vendor\cakephp\debug_kit\src\ToolbarService.php(204): Cake\ORM\Table->save(Object(DebugKit\Model\Entity\Request))
+#14 C:\xampp\htdocs\In-Planet\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): DebugKit\ToolbarService->saveData(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#16 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#17 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 C:\xampp\htdocs\In-Planet\webroot\index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2017-08-10 00:59:58 Error: [PDOException] SQLSTATE[HY000] [1049] Unknown database 'inplanet'
+Request URL: /people/add
+Referer URL: http://localhost/In-Planet/users/login
+Stack Trace:
+#0 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Database\Driver\PDODriverTrait.php(47): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Database\Driver\Mysql.php(104): Cake\Database\Driver\Mysql->_connect('mysql:host=loca...', Array)
+#2 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Database\Schema\BaseSchema.php(45): Cake\Database\Driver\Mysql->connect()
+#3 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Database\Dialect\MysqlDialectTrait.php(63): Cake\Database\Schema\BaseSchema->__construct(Object(Cake\Database\Driver\Mysql))
+#4 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Database\Schema\Collection.php(52): Cake\Database\Driver\Mysql->schemaDialect()
+#5 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Database\Schema\CachedCollection.php(42): Cake\Database\Schema\Collection->__construct(Object(Cake\Database\Connection))
+#6 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Database\Connection.php(365): Cake\Database\Schema\CachedCollection->__construct(Object(Cake\Database\Connection), true)
+#7 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\ORM\Table.php(530): Cake\Database\Connection->getSchemaCollection()
+#8 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\ORM\Query.php(210): Cake\ORM\Table->getSchema()
+#9 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\ORM\Query.php(167): Cake\ORM\Query->addDefaultTypes(Object(App\Model\Table\CitiesTable))
+#10 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\ORM\Table.php(1569): Cake\ORM\Query->__construct(Object(Cake\Database\Connection), Object(App\Model\Table\CitiesTable))
+#11 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\ORM\Table.php(1171): Cake\ORM\Table->query()
+#12 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\ORM\Association.php(1028): Cake\ORM\Table->find('list', Array)
+#13 C:\xampp\htdocs\In-Planet\src\Controller\PeopleController.php(66): Cake\ORM\Association->find('list', Array)
+#14 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Controller\Controller.php(440): App\Controller\PeopleController->add()
+#15 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(119): Cake\Controller\Controller->invokeAction()
+#16 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PeopleController))
+#17 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#19 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#20 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#21 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#22 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#23 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#24 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#25 C:\xampp\htdocs\In-Planet\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(52): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#26 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#27 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#28 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#29 C:\xampp\htdocs\In-Planet\webroot\index.php(37): Cake\Http\Server->run()
+#30 {main}
+
+
+2017-08-10 01:22:00 Error: [ArgumentCountError] Too few arguments to function App\Controller\AppController::beforeFilter(), 0 passed in C:\xampp\htdocs\In-Planet\src\Controller\UsersController.php on line 163 and exactly 1 expected in C:\xampp\htdocs\In-Planet\src\Controller\AppController.php on line 62
+Request URL: /users/add
+Referer URL: http://localhost/In-Planet/users/login?redirect=%2Fusers%2Fadd
+Stack Trace:
+#0 C:\xampp\htdocs\In-Planet\src\Controller\UsersController.php(163): App\Controller\AppController->beforeFilter()
+#1 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Event\EventManager.php(414): App\Controller\UsersController->beforeFilter(Object(Cake\Event\Event))
+#2 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Event\EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#3 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Event\EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#4 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Controller\Controller.php(502): Cake\Controller\Controller->dispatchEvent('Controller.init...')
+#5 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(114): Cake\Controller\Controller->startupProcess()
+#6 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\UsersController))
+#7 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#8 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#9 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#10 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#11 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#12 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#13 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#14 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#15 C:\xampp\htdocs\In-Planet\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(52): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#17 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#19 C:\xampp\htdocs\In-Planet\webroot\index.php(37): Cake\Http\Server->run()
+#20 {main}
+
+
+2017-08-10 01:29:56 Error: [InvalidArgumentException] Cannot convert value to string
+Request URL: /users/add
+Referer URL: http://localhost/In-Planet/users/login?redirect=%2Fusers%2Fadd
+Stack Trace:
+#0 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Database\TypeConverterTrait.php(37): Cake\Database\Type\StringType->toDatabase(Array, Object(Cake\Database\Driver\Mysql))
+#1 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Database\Statement\PDOStatement.php(69): Cake\Database\Statement\StatementDecorator->cast(Array, Object(Cake\Database\Type\StringType))
+#2 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(107): Cake\Database\Statement\PDOStatement->bindValue('c0', Array, 'string')
+#3 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(98): Cake\Database\Statement\StatementDecorator->bindValue('c0', Array, NULL)
+#4 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Database\ValueBinder.php(147): Cake\Database\Log\LoggingStatement->bindValue('c0', Array, NULL)
+#5 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Database\Connection.php(310): Cake\Database\ValueBinder->attachTo(Object(Cake\Database\Log\LoggingStatement))
+#6 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Database\Query.php(213): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#7 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\ORM\Query.php(1011): Cake\Database\Query->execute()
+#8 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(276): Cake\ORM\Query->_execute()
+#9 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\ORM\Query.php(960): Cake\ORM\Query->_all()
+#10 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(132): Cake\ORM\Query->all()
+#11 [internal function]: Cake\ORM\Query->getIterator()
+#12 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\View\Widget\SelectBoxWidget.php(149): iterator_to_array(Object(Cake\ORM\Query))
+#13 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\View\Widget\SelectBoxWidget.php(116): Cake\View\Widget\SelectBoxWidget->_renderContent(Array)
+#14 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\View\Helper\FormHelper.php(2772): Cake\View\Widget\SelectBoxWidget->render(Array, Object(Cake\View\Form\EntityContext))
+#15 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\View\Helper\FormHelper.php(2052): Cake\View\Helper\FormHelper->widget('select', Array)
+#16 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\View\Helper\FormHelper.php(1227): Cake\View\Helper\FormHelper->select('profile_id', Object(Cake\ORM\Query), Array)
+#17 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\View\Helper\FormHelper.php(1125): Cake\View\Helper\FormHelper->_getInput('profile_id', Array)
+#18 C:\xampp\htdocs\In-Planet\src\Template\Users\add.ctp(37): Cake\View\Helper\FormHelper->control('profile_id', Array)
+#19 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\View\View.php(1025): include('C:\\xampp\\htdocs...')
+#20 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\View\View.php(986): Cake\View\View->_evaluate('C:\\xampp\\htdocs...', Array)
+#21 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\View\View.php(610): Cake\View\View->_render('C:\\xampp\\htdocs...')
+#22 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Controller\Controller.php(623): Cake\View\View->render(NULL, NULL)
+#23 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(125): Cake\Controller\Controller->render()
+#24 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\UsersController))
+#25 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#26 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#27 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#28 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#29 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#30 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#31 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#32 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#33 C:\xampp\htdocs\In-Planet\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(52): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#34 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#35 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#36 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#37 C:\xampp\htdocs\In-Planet\webroot\index.php(37): Cake\Http\Server->run()
+#38 {main}
+
+
+2017-08-10 01:33:09 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'field' in 'where clause'
+Request URL: /users/add
+Referer URL: http://localhost/In-Planet/users/login?redirect=%2Fusers%2Fadd
+Stack Trace:
+#0 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(39): PDOStatement->execute(NULL)
+#1 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(56): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Database\Connection.php(311): Cake\Database\Log\LoggingStatement->execute()
+#4 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Database\Query.php(213): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#5 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\ORM\Query.php(1011): Cake\Database\Query->execute()
+#6 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(276): Cake\ORM\Query->_execute()
+#7 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\ORM\Query.php(960): Cake\ORM\Query->_all()
+#8 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(132): Cake\ORM\Query->all()
+#9 [internal function]: Cake\ORM\Query->getIterator()
+#10 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\View\Widget\SelectBoxWidget.php(149): iterator_to_array(Object(Cake\ORM\Query))
+#11 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\View\Widget\SelectBoxWidget.php(116): Cake\View\Widget\SelectBoxWidget->_renderContent(Array)
+#12 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\View\Helper\FormHelper.php(2772): Cake\View\Widget\SelectBoxWidget->render(Array, Object(Cake\View\Form\EntityContext))
+#13 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\View\Helper\FormHelper.php(2052): Cake\View\Helper\FormHelper->widget('select', Array)
+#14 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\View\Helper\FormHelper.php(1227): Cake\View\Helper\FormHelper->select('profile_id', Object(Cake\ORM\Query), Array)
+#15 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\View\Helper\FormHelper.php(1125): Cake\View\Helper\FormHelper->_getInput('profile_id', Array)
+#16 C:\xampp\htdocs\In-Planet\src\Template\Users\add.ctp(37): Cake\View\Helper\FormHelper->control('profile_id', Array)
+#17 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\View\View.php(1025): include('C:\\xampp\\htdocs...')
+#18 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\View\View.php(986): Cake\View\View->_evaluate('C:\\xampp\\htdocs...', Array)
+#19 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\View\View.php(610): Cake\View\View->_render('C:\\xampp\\htdocs...')
+#20 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Controller\Controller.php(623): Cake\View\View->render(NULL, NULL)
+#21 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(125): Cake\Controller\Controller->render()
+#22 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\UsersController))
+#23 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#24 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#25 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#26 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#27 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#28 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#29 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#30 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#31 C:\xampp\htdocs\In-Planet\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(52): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#32 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#33 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#34 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#35 C:\xampp\htdocs\In-Planet\webroot\index.php(37): Cake\Http\Server->run()
+#36 {main}
+
+
+2017-08-10 01:33:54 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'field' in 'where clause'
+Request URL: /users/add
+Referer URL: http://localhost/In-Planet/users/login?redirect=%2Fusers%2Fadd
+Stack Trace:
+#0 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(39): PDOStatement->execute(NULL)
+#1 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(56): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Database\Connection.php(311): Cake\Database\Log\LoggingStatement->execute()
+#4 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Database\Query.php(213): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#5 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\ORM\Query.php(1011): Cake\Database\Query->execute()
+#6 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(276): Cake\ORM\Query->_execute()
+#7 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\ORM\Query.php(960): Cake\ORM\Query->_all()
+#8 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(132): Cake\ORM\Query->all()
+#9 [internal function]: Cake\ORM\Query->getIterator()
+#10 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\View\Widget\SelectBoxWidget.php(149): iterator_to_array(Object(Cake\ORM\Query))
+#11 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\View\Widget\SelectBoxWidget.php(116): Cake\View\Widget\SelectBoxWidget->_renderContent(Array)
+#12 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\View\Helper\FormHelper.php(2772): Cake\View\Widget\SelectBoxWidget->render(Array, Object(Cake\View\Form\EntityContext))
+#13 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\View\Helper\FormHelper.php(2052): Cake\View\Helper\FormHelper->widget('select', Array)
+#14 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\View\Helper\FormHelper.php(1227): Cake\View\Helper\FormHelper->select('profile_id', Object(Cake\ORM\Query), Array)
+#15 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\View\Helper\FormHelper.php(1125): Cake\View\Helper\FormHelper->_getInput('profile_id', Array)
+#16 C:\xampp\htdocs\In-Planet\src\Template\Users\add.ctp(37): Cake\View\Helper\FormHelper->control('profile_id', Array)
+#17 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\View\View.php(1025): include('C:\\xampp\\htdocs...')
+#18 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\View\View.php(986): Cake\View\View->_evaluate('C:\\xampp\\htdocs...', Array)
+#19 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\View\View.php(610): Cake\View\View->_render('C:\\xampp\\htdocs...')
+#20 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Controller\Controller.php(623): Cake\View\View->render(NULL, NULL)
+#21 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(125): Cake\Controller\Controller->render()
+#22 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\UsersController))
+#23 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#24 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#25 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#26 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#27 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#28 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#29 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#30 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#31 C:\xampp\htdocs\In-Planet\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(52): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#32 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#33 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#34 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#35 C:\xampp\htdocs\In-Planet\webroot\index.php(37): Cake\Http\Server->run()
+#36 {main}
+
+
+2017-08-10 01:40:22 Error: [ParseError] syntax error, unexpected '$this' (T_VARIABLE), expecting ']' in C:\xampp\htdocs\In-Planet\src\Controller\UsersController.php on line 73
+Request URL: /users/add
+Referer URL: http://localhost/In-Planet/users/login?redirect=%2Fusers%2Fadd
+Stack Trace:
+#0 C:\xampp\htdocs\In-Planet\vendor\composer\ClassLoader.php(322): Composer\Autoload\includeFile('C:\\xampp\\htdocs...')
+#1 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controller\\...')
+#2 [internal function]: spl_autoload_call('App\\Controller\\...')
+#3 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Core\App.php(152): class_exists('App\\Controller\\...')
+#4 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Core\App.php(64): Cake\Core\App::_classExistsInBase('\\Controller\\Use...', 'App')
+#5 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(68): Cake\Core\App::className('Users', 'Controller', 'Controller')
+#6 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(90): Cake\Http\ControllerFactory->create(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#8 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#9 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#10 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#11 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#12 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#13 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#14 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#15 C:\xampp\htdocs\In-Planet\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(52): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#17 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#19 C:\xampp\htdocs\In-Planet\webroot\index.php(37): Cake\Http\Server->run()
+#20 {main}
+
+
+2017-08-10 01:41:09 Error: [ParseError] syntax error, unexpected ')', expecting ']' in C:\xampp\htdocs\In-Planet\src\Controller\UsersController.php on line 72
+Request URL: /users/add
+Referer URL: http://localhost/In-Planet/users/login?redirect=%2Fusers%2Fadd
+Stack Trace:
+#0 C:\xampp\htdocs\In-Planet\vendor\composer\ClassLoader.php(322): Composer\Autoload\includeFile('C:\\xampp\\htdocs...')
+#1 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controller\\...')
+#2 [internal function]: spl_autoload_call('App\\Controller\\...')
+#3 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Core\App.php(152): class_exists('App\\Controller\\...')
+#4 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Core\App.php(64): Cake\Core\App::_classExistsInBase('\\Controller\\Use...', 'App')
+#5 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(68): Cake\Core\App::className('Users', 'Controller', 'Controller')
+#6 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(90): Cake\Http\ControllerFactory->create(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#8 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#9 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#10 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#11 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#12 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#13 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#14 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#15 C:\xampp\htdocs\In-Planet\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(52): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#17 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#19 C:\xampp\htdocs\In-Planet\webroot\index.php(37): Cake\Http\Server->run()
+#20 {main}
+
+
+2017-08-10 01:41:40 Error: [RuntimeException] Table "App\Model\Table\ProfilesTable" is not associated with "find"
+Request URL: /users/add
+Referer URL: http://localhost/In-Planet/users/login?redirect=%2Fusers%2Fadd
+Stack Trace:
+#0 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\ORM\Association.php(1336): Cake\ORM\Table->__get('find')
+#1 C:\xampp\htdocs\In-Planet\src\Controller\UsersController.php(68): Cake\ORM\Association->__get('find')
+#2 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Controller\Controller.php(440): App\Controller\UsersController->add()
+#3 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(119): Cake\Controller\Controller->invokeAction()
+#4 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\UsersController))
+#5 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#6 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#7 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#8 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#9 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#10 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#11 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#12 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#13 C:\xampp\htdocs\In-Planet\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(52): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#14 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#15 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#17 C:\xampp\htdocs\In-Planet\webroot\index.php(37): Cake\Http\Server->run()
+#18 {main}
+
+
+2017-08-10 01:44:28 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'profile' in 'where clause'
+Request URL: /users/add
+Referer URL: http://localhost/In-Planet/users/login?redirect=%2Fusers%2Fadd
+Stack Trace:
+#0 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(39): PDOStatement->execute(NULL)
+#1 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(56): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Database\Connection.php(311): Cake\Database\Log\LoggingStatement->execute()
+#4 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Database\Query.php(213): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#5 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\ORM\Query.php(1011): Cake\Database\Query->execute()
+#6 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(276): Cake\ORM\Query->_execute()
+#7 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\ORM\Query.php(960): Cake\ORM\Query->_all()
+#8 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(132): Cake\ORM\Query->all()
+#9 [internal function]: Cake\ORM\Query->getIterator()
+#10 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\View\Widget\SelectBoxWidget.php(149): iterator_to_array(Object(Cake\ORM\Query))
+#11 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\View\Widget\SelectBoxWidget.php(116): Cake\View\Widget\SelectBoxWidget->_renderContent(Array)
+#12 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\View\Helper\FormHelper.php(2772): Cake\View\Widget\SelectBoxWidget->render(Array, Object(Cake\View\Form\EntityContext))
+#13 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\View\Helper\FormHelper.php(2052): Cake\View\Helper\FormHelper->widget('select', Array)
+#14 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\View\Helper\FormHelper.php(1227): Cake\View\Helper\FormHelper->select('profile_id', Object(Cake\ORM\Query), Array)
+#15 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\View\Helper\FormHelper.php(1125): Cake\View\Helper\FormHelper->_getInput('profile_id', Array)
+#16 C:\xampp\htdocs\In-Planet\src\Template\Users\add.ctp(37): Cake\View\Helper\FormHelper->control('profile_id', Array)
+#17 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\View\View.php(1025): include('C:\\xampp\\htdocs...')
+#18 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\View\View.php(986): Cake\View\View->_evaluate('C:\\xampp\\htdocs...', Array)
+#19 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\View\View.php(610): Cake\View\View->_render('C:\\xampp\\htdocs...')
+#20 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Controller\Controller.php(623): Cake\View\View->render(NULL, NULL)
+#21 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(125): Cake\Controller\Controller->render()
+#22 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\UsersController))
+#23 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#24 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#25 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#26 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#27 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#28 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#29 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#30 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#31 C:\xampp\htdocs\In-Planet\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(52): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#32 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#33 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#34 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#35 C:\xampp\htdocs\In-Planet\webroot\index.php(37): Cake\Http\Server->run()
+#36 {main}
+
+
+2017-08-10 01:45:09 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'PID' in 'where clause'
+Request URL: /users/add
+Referer URL: http://localhost/In-Planet/users/login?redirect=%2Fusers%2Fadd
+Stack Trace:
+#0 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(39): PDOStatement->execute(NULL)
+#1 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(174): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(56): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Database\Connection.php(311): Cake\Database\Log\LoggingStatement->execute()
+#4 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Database\Query.php(213): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#5 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\ORM\Query.php(1011): Cake\Database\Query->execute()
+#6 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(276): Cake\ORM\Query->_execute()
+#7 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\ORM\Query.php(960): Cake\ORM\Query->_all()
+#8 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(132): Cake\ORM\Query->all()
+#9 [internal function]: Cake\ORM\Query->getIterator()
+#10 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\View\Widget\SelectBoxWidget.php(149): iterator_to_array(Object(Cake\ORM\Query))
+#11 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\View\Widget\SelectBoxWidget.php(116): Cake\View\Widget\SelectBoxWidget->_renderContent(Array)
+#12 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\View\Helper\FormHelper.php(2772): Cake\View\Widget\SelectBoxWidget->render(Array, Object(Cake\View\Form\EntityContext))
+#13 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\View\Helper\FormHelper.php(2052): Cake\View\Helper\FormHelper->widget('select', Array)
+#14 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\View\Helper\FormHelper.php(1227): Cake\View\Helper\FormHelper->select('profile_id', Object(Cake\ORM\Query), Array)
+#15 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\View\Helper\FormHelper.php(1125): Cake\View\Helper\FormHelper->_getInput('profile_id', Array)
+#16 C:\xampp\htdocs\In-Planet\src\Template\Users\add.ctp(37): Cake\View\Helper\FormHelper->control('profile_id', Array)
+#17 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\View\View.php(1025): include('C:\\xampp\\htdocs...')
+#18 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\View\View.php(986): Cake\View\View->_evaluate('C:\\xampp\\htdocs...', Array)
+#19 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\View\View.php(610): Cake\View\View->_render('C:\\xampp\\htdocs...')
+#20 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Controller\Controller.php(623): Cake\View\View->render(NULL, NULL)
+#21 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(125): Cake\Controller\Controller->render()
+#22 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\UsersController))
+#23 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\BaseApplication.php(78): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#24 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#25 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(59): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#26 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#27 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#28 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#29 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(92): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#30 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#31 C:\xampp\htdocs\In-Planet\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(52): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#32 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#33 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#34 C:\xampp\htdocs\In-Planet\vendor\cakephp\cakephp\src\Http\Server.php(80): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#35 C:\xampp\htdocs\In-Planet\webroot\index.php(37): Cake\Http\Server->run()
+#36 {main}
+
+

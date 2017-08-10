@@ -40,7 +40,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                      <?php if($loggedIn) : ?>
                     <li><?= $this->Html->link('Logout', ['controller' => 'users', 'action' => 'logout']); ?></li>
                 <?php else : ?>
-                    <li><?= $this->Html->link('Register', ['controller' => 'people', 'action' => 'add']); ?></li>
+                    <li><?= $this->Html->link('Register', ['controller' => 'users', 'action' => 'add']); ?></li>
                 <?php endif; ?>
                     
                    
@@ -53,8 +53,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             <div class="container clearfix">
                 <?= $this->fetch('content') ?>
             </div>
-            <footer>
-            </footer>
+            
     </body>
 
     </html>

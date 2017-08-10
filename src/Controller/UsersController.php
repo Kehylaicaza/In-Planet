@@ -64,8 +64,9 @@ class UsersController extends AppController
             }
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
         }
-        $people = $this->Users->People->find('list', ['limit' => 200]);
-        $profiles = $this->Users->Profiles->find('list', ['limit' => 200]);
+       // $people = $this->Users->People->find('list', ['limit' => 200]);
+        $profiles = $this->Users->Profiles->find('list',['conditions' => ['profiles' => 'client']]);
+            
         $this->set(compact('user', 'people', 'profiles'));
         $this->set('_serialize', ['user']);
     }
@@ -128,10 +129,10 @@ class UsersController extends AppController
                     return $this->redirect(['controller' => 'pages', 'action' => 'admin' ]);
                     }
                     if($user['profile_id']===2){
-                    return $this->redirect(['controller' => 'pages', 'action' => 'employee' ]);
+                    return $this->redirect(['controller' => 'pages', 'action' => 'client' ]);
                     }
                     if($user['profile_id']===3){
-                    return $this->redirect(['controller' => 'pages', 'action' => 'client' ]);
+                    return $this->redirect(['controller' => 'pages', 'action' => 'employee' ]);
                     }
                 //return $this->redirect(['controller' => 'options']);
             }
@@ -144,7 +145,7 @@ class UsersController extends AppController
          return $this->redirect($this->Auth->logout());
     }
     
-   public function register(){
+  /* public function register(){
         $user = $this->People->newEntity();
         if($this->request->is('post')){
             $user = $this->People->patchEntity($user, $this->request->data);
@@ -157,9 +158,13 @@ class UsersController extends AppController
         }
         $this->set(compact('user'));
         $this->set('_serialzie', ['user']);
-    }
-    public function beforeFilter(Event $event){
-        $this->Auth->allow(['registry']);
+    }*/
+    
+      public function beforeFilter(Event $event){
+       
+
+         $this->Auth->allow(array('controller' => 'Users', 'action' => 'display', 'add'));
+           
     }
    public function beforeRender(Event $event)
     {

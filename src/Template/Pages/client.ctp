@@ -80,25 +80,28 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
             </div>
         </nav>
         <div class="row2">
-           
+
             <div class="col-sm-8">
-             <?php echo $this->Html->image('in.png', ['alt' => 'in']);?>
-               
-            
+                <?php echo $this->Html->image('in.png', ['alt' => 'in']);?>
+
+
             </div>
-       <div class="col-sm-5">
-               <div class="vertical-menu">
-            <a href="#" class="active">Editar Mi perfil</a>
-            <a href="#">Ver Perfil</a>
-            <a href="#">Cargar Planilla</a>
-            <a href="#">Cita</a>
-        </div>
+            <div class="col-sm-5">
+                <div class="vertical-menu">
+                    <li>
+                        <?= $this->Html->link( 'Editar Perfil',['controller' => 'People', 'action' => 'Add']); ?>
+                    </li>
+
+                    <a href="#">Ver Perfil</a>
+                    <a href="#">Cargar Planilla</a>
+                    <a href="#">Cita</a>
+                </div>
             </div>
 
         </div>
-        
-   
-      
+
+
+
     </body>
 
     </html>

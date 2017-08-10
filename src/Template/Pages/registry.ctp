@@ -77,7 +77,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
         </nav>
         <div class="info">
             <br><br><br><br>
-            <h3>REGISTRATE</h3>
+            <h3>Ingresa tus datos </h3>
 
             <p> Mantengase conectado todo el dia con nuestros planes ...</p>
             <h5>Llena tus datos</h5>

@@ -32,10 +32,10 @@
     <div class="info">
         <?= $this->Form->create($person) ?>
             <br><br><br><br>
-            <h3>REGISTRATE</h3>
+            <h3>Ingresa tus datos</h3>
 
             <p> Mantengase conectado todo el dia con nuestros planes ...</p>
-            <h5>Llena tus datos</h5>
+            <h5>Por favor ingrese información real, cualquier intento de fraude anulará su cuenta</h5>
     </div>
     <fieldset>
         <div class="contentform">
